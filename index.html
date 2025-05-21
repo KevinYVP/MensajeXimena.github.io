@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Copa de Vino con CSS</title>
+    <title>Carta</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Petemoss&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="sobre">
@@ -18,22 +18,39 @@
                 <div class="cubierta-carta">
                     <div class="Lado tarjeta-principal">
                         <h1 class="carta-titulo">
-                            <span class="carta-titulo-secundaria">Hola</span>
-                            <span class="titulo-principal">Ximena <span
-                                    class="apostrofe-titulo">🥺</span>Y</span>
-                            <span class="carta-titulo-secundaria">Como estas</span>
+                            <span class="carta-titulo-secundaria">Carta</span>
+                            <span class="titulo-principal">Para Ximena<span
+                                    class="apostrofe-titulo">🥺</span></span>
+                            <span class="carta-titulo-secundaria">Disculpa</span>
                         </h1>
                     </div>
-                    <div class="Lado tarjeta-secundario"></div>
+                    <div class="Lado tarjeta-secundario"><center>🙏🏻🥺🙏🏻</center></div>
                 </div>
                 <div class="cuerpo-carta">
-                    <p>p</p>
-                    <p>p2</p>
-                    <p>p3</p>
+                    <p>Hola Ximena espero que tu y tu familia se encuentren muy bien, bueno el motivo de esta carta o pagina o texto jeje, 
+                    es para pedirte perdon por todo lo que hice y dije la verdad es que estube muy mal y sinceramente me arrepiento de todo, perdon si te hice sentir mal,
+                    perdon por como actue y por lo que dije, espero tomes esta disculpa de la mejor manera y ojala que algundia puedas verme como una buena persona otra vez, 
+                    espero que puedas perdonarme y que podamos seguir siendo amigos, la verdad me duele aver perdido a mi mejor amiga con la que comparti tanto,
+                    me gustaria mucho que fueramos amigos de nuevo para simplemente hablar de ves encuando y reirnos de lo que nos pasa, se perfectamente que no podemos volver a ser pareja 
+                    porque ropi toda la confianza que me tenias, pero si es posible quisiera seguir siendo tu amigo. 
+                    </p>
+                    <p>Si dices que no, lo entendere y no te molestare mas, aunque espero que almenos podamos saludarnos sin que sea incomodo.</p>
+                    <p>Gracias por leer y no puse botoncitos de si o no porque es mas complicado jeje, asi me respondes por mensaje jeje. </p>
                 </div>
             </div>
         </div>
         <div class="sello"></div></div>
-        <script  src="./index.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const sobreElement = document.querySelector('.sobre');
+
+                if (sobreElement) {
+                    sobreElement.addEventListener('click', function() {
+                        // Alterna (añade/quita) la clase 'sobre-abierto' en el elemento .sobre
+                        this.classList.toggle('sobre-abierto');
+                    });
+                }
+            });
+        </script>
 </body>
 </html>

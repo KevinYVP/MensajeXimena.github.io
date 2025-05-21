@@ -1,4 +1,13 @@
-function fillWine() {
-    const wineLiquid = document.querySelector('.wine-liquid');
-    wineLiquid.style.height = '80%'; // Cambia este valor para ajustar la cantidad de vino que se llena
-  }
+const envelope = document.querySelector('.sobre');
+const heartSeal = document.querySelector('.sello');
+let timeoutId;
+envelope.addEventListener('mouseover', () => {
+    clearTimeout(timeoutId);
+    heartSeal.style.opacity = 0;
+});
+envelope.addEventListener('mouseout', () => {
+    timeoutId = setTimeout(() => {
+        heartSeal.style.opacity = 1;
+    }, 1500); 
+});
+heartSeal.style.transition = 'opacity 0.3s ease';
