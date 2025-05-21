@@ -1,4 +1,4 @@
-* {
+/* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -31,7 +31,7 @@ body {
   transition: height 3.5s ease-in-out;
 }
 
-/* Simulación del llenado de la copa */
+/* Simulación del llenado de la copa 
 body:hover .vino {
-  height: 85%; /* Esto hace que el vino se rellene al pasar el ratón sobre la página */
-}
+  height: 85%; /* Esto hace que el vino se rellene al pasar el ratón sobre la página 
+}*/
