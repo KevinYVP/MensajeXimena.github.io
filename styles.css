@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50rem;
+  background-color: #f4f4f4;
+}
+
+.copa {
+  position: relative;
+  width: 150px;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 5% 5% 48% 48%;
+  border: 2px solid #000;
+  overflow: hidden;
+}
+
+.vino {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background-color: #8B0000;
+  transition: height 3.5s ease-in-out;
+}
+
+/* Simulación del llenado de la copa */
+body:hover .vino {
+  height: 85%; /* Esto hace que el vino se rellene al pasar el ratón sobre la página */
+}
