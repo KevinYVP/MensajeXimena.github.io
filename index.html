@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <audio src="./audio/Vídeo sin título ‐ Hecho con Clipchamp.mp4" autoplay loop></audio>
+    <audio src="./audio/audio-1.mp3" autoplay loop></audio>
+    <audio id="background-music" src="./audio/audio-1.mp3" loop></audio>
     <div class="sobre">
         <div class="tapa-sobre"></div>
         <div class="tapa-sobre tapa-secundaria-sobre"><center>Clic para Abrir</center></div>
@@ -46,12 +47,29 @@
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const sobreElement = document.querySelector('.sobre');
+                const audioElement = document.getElementById('background-music');
+                let musicStarted = false; // Para asegurar que la música solo se inicie una vez con el clic
 
-                if (sobreElement) {
+
+                if (sobreElement && audioElement) {
                     sobreElement.addEventListener('click', function() {
                         // Alterna (añade/quita) la clase 'sobre-abierto' en el elemento .sobre
                         this.classList.toggle('sobre-abierto');
+
+                         // Si la música no ha comenzado y el sobre se está abriendo (contiene la clase 'sobre-abierto')
+                        if (!musicStarted && this.classList.contains('sobre-abierto')) {
+                            audioElement.play().then(() => {
+                                musicStarted = true; // Marcamos que la música ha comenzado
+                            }).catch(error => {
+                                console.error("Error al intentar reproducir el audio:", error);
+                                // Opcional: Informar al usuario que el navegador pudo haber bloqueado el audio.
+                                // alert("Tu navegador podría haber bloqueado la reproducción automática de audio.");
+                            });
+                        }
                     });
+                } else {
+                    if (!sobreElement) console.error("El elemento con la clase '.sobre' no fue encontrado.");
+                    if (!audioElement) console.error("El elemento de audio con id 'background-music' no fue encontrado.");
                 }
             });
         </script>
